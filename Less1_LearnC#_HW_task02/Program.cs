@@ -1,6 +1,7 @@
 ﻿// Задача 2: 
 // Напишите программу, которая на вход принимает два числа 
 // и выдаёт, какое число большее, а какое меньшее.
+start:
 
 int N = 2; // задаем количество чисел для сравнения
 int numberA=0, numberB=0, numberRange;
@@ -62,3 +63,15 @@ Console.WriteLine ($"из двух чисел {numberA} и {numberB}");
 Console.WriteLine ($"наибольшее число = {max}, наименьшее число = {min}");
 
 end:;
+Console.WriteLine ("Продолжить работу с программой или выход?");
+Console.Write ("Ваш выбор (ведите Y-для продолжения или любой другой для выхода): ");
+string str = Console.ReadLine()!;
+if (str.ToLower() == "y")
+    {
+    goto start;
+    }
+else 
+    {
+    Console.WriteLine ("Спасибо за использование праграммы!");
+    Console.WriteLine ("До новых встреч!");
+    }
