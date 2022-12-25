@@ -14,4 +14,5 @@ Console.Write("Введите число: ");
 int number = int.Parse(Console.ReadLine()!);
 Console.WriteLine();
 Console.WriteLine("Таблица квадратов чисел от 1 до N");
+
 PrintTableSqrt(number);
