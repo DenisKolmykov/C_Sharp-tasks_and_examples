@@ -30,7 +30,6 @@ Console.Clear();
 Console.Write("Введите любое целое число (int): ");
 int n = int.Parse(Console.ReadLine()!);
 
-
 Console.Write($"Сумма цифр в числе {n} = ");
 PrintSumDigitsOfNumber(n);
 
