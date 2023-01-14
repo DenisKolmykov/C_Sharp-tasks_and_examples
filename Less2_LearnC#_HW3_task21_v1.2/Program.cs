@@ -4,7 +4,15 @@
 
 void PrintDistanceT1T2(double[,] coord)
 {
-    double distance = Math.Sqrt((coord[0,0] - coord[1,0]) * (coord[0,0] - coord[1,0]) + (coord[0,1] - coord[1,1]) * (coord[0,1] - coord[1,1]) + (coord[0,2] - coord[1,2]) * (coord[0,2] - coord[1,2]));
+    int i =0; // счетчик цикла
+    double distance =0;
+
+    for (i=0; i<3; i++)
+    {
+    distance = distance + Math.Sqrt((coord[0,0] - coord[1,0]) * (coord[0,0] - coord[1,0]); 
+    
+    //+ (coord[0,1] - coord[1,1]) * (coord[0,1] - coord[1,1]) + (coord[0,2] - coord[1,2]) * (coord[0,2] - coord[1,2]));
+    
     Console.WriteLine($"Расстояние между точками Т1 ({coord[0,0]}; {coord[0,1]}; {coord[0,2]}) и Т2 ({coord[1,0]}; {coord[1,1]}; {coord[1,2]})");
     Console.WriteLine($"составляет {distance:f}");
 }
