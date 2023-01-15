@@ -7,23 +7,23 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
-void PrintAPowB(int[] numbers)
+void PrintAPowB(int a, int b)
 {
-    double aPowB = numbers[0];
+    double aPowB = a;
     
-    if (numbers[1] == 0)
+    if (b == 0)
     {
         aPowB = 1;
     }
     
     else
     {
-        for (int i = 1; i < Math.Abs(numbers[1]); i++)
+        for (int i = 1; i < Math.Abs(b); i++)
         {
-            aPowB = aPowB * numbers[0];
+            aPowB = aPowB * a;
         }
 
-        if (numbers[1] < 0)
+        if (b < 0)
         {
             aPowB = 1 / aPowB;
         }
@@ -37,7 +37,10 @@ Console.Clear();
 Console.WriteLine("Введите через пробел: любое число А и его степень В: ");
 var numbers = Console.ReadLine()!.Split().Select(int.Parse).ToArray();
 
-Console.Write($"Число {numbers[0]} в степени {numbers[1]} = ");
+int a= numbers[0];
+int b = numbers[1];
+
+Console.Write($"Число {a} в степени {b} = ");
 PrintAPowB(numbers);
 
 Console.WriteLine();
