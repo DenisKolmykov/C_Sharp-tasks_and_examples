@@ -48,6 +48,6 @@ PrintArray(array);
 Console.WriteLine();
 
 int countTwoDigitNumber = FindTwoDigitNumberInArray(array);
-Console.WriteLine($"В данном массиве присутствует `{countTwoDigitNumber}` двузначных числел");
+Console.WriteLine($"В данном массиве присутствует `{countTwoDigitNumber}` двузначных чисел");
 
 Console.WriteLine();
