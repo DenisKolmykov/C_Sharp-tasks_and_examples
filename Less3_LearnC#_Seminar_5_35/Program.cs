@@ -19,6 +19,11 @@ int[] CreateArray(int length = 123, int minElem = -200, int maxElem = 200)
     return arr;
 }
 
+void PrintArray(int[] array)
+{
+    Console.WriteLine("[" + string.Join(", ", array) + "]");
+}
+
 int FindTwoDigitNumberInArray(int[] arr)
 {
     int countTwoDigitNumber = 0;
@@ -32,11 +37,6 @@ int FindTwoDigitNumberInArray(int[] arr)
     }
 
     return countTwoDigitNumber;
-}
-
-void PrintArray(int[] array)
-{
-    Console.WriteLine("[" + string.Join(", ", array) + "]");
 }
 
 Console.Clear();
