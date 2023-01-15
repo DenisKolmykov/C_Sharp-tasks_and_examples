@@ -18,6 +18,11 @@ int[] CreateArray(int length = 12, int minElem = 100, int maxElem = 1000)
     return arr;
 }
 
+void PrintArray(int[] array)
+{
+    Console.WriteLine("[" + string.Join(", ", array) + "]");
+}
+
 int FindEvenNumberInArray(int[] arr)
 {
     int countEvenNumber = 0;
@@ -31,11 +36,6 @@ int FindEvenNumberInArray(int[] arr)
     }
 
     return countEvenNumber;
-}
-
-void PrintArray(int[] array)
-{
-    Console.WriteLine("[" + string.Join(", ", array) + "]");
 }
 
 Console.Clear();
