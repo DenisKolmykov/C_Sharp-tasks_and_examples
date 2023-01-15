@@ -41,6 +41,6 @@ int a= numbers[0];
 int b = numbers[1];
 
 Console.Write($"Число {a} в степени {b} = ");
-PrintAPowB(numbers);
+PrintAPowB(a,b);
 
 Console.WriteLine();
