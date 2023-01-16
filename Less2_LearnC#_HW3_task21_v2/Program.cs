@@ -12,12 +12,12 @@ void PrintDistanceT1T2(double[] arrT1, double[] arrT2)
 Console.Clear();
 
 Console.WriteLine("Введите черрез пробел координаты точки Т1 (x,y,z): ");
-var CoordinatesOfPointT1 = Console.ReadLine().Split().Select(double.Parse).ToArray();
+var CoordinatesOfPointT1 = Console.ReadLine()!.Split().Select(double.Parse).ToArray();
 
 Console.WriteLine();
 
 Console.WriteLine("Введите через пробел координаты точки Т2 (x,y,z): ");
-var CoordinatesOfPointT2 = Console.ReadLine().Split().Select(double.Parse).ToArray();
+var CoordinatesOfPointT2 = Console.ReadLine()!.Split().Select(double.Parse).ToArray();
 
 Console.WriteLine();
 
