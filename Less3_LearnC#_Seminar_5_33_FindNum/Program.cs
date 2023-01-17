@@ -25,21 +25,26 @@ void PrintArray(int[] array)
 void FindNumInArray(int[] arr, int number)
 {
     int i = 0;
+    int position = -1;
+
     while (i < arr.Length)
     {
         if (number == arr[i])
         {
-            Console.WriteLine($"Указанное число `{number}` находится в маcсиве на позиции `{i + 1}`");
-            goto end;
+            position = i + 1;
+            Console.WriteLine($"Указанное число `{number}` находится в маcсиве на позиции `{position}` (индекс: {i})");
+            i++;
         }
         else
         {
             i++;
         }
     }
-    Console.WriteLine($"В массиве отсутствует указанное число `{number}` ");
-    
-    end:;
+
+    if (position == -1)
+    {
+        Console.WriteLine($"В массиве отсутствует указанное число `{number}` ");
+    }
 }
 
 
