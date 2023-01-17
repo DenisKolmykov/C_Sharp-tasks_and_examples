@@ -12,7 +12,7 @@ int[] CreateArray(int length = 10, int minElem = -10, int maxElem = 10)
 
     for (int i = 0; i < length; i++)
     {
-        arr[i] = rand.Next(minElem, maxElem);
+        arr[i] = rand.Next(minElem, maxElem + 1);
     }
 
     return arr;
@@ -22,19 +22,22 @@ int[] GetProdPairInArray(int[] arr)
 {
     int lengthPairArr = arr.Length / 2;
 
-    if (arr.Length % 2 > 0)
+    if (arr.Length % 2 > 0) // если в массиве нечетное количество элементов
+    // то длину массива произведений пар увеличиваем на 1 (если четное количество - то lengthPairArr = arr.Length / 2)
+    // (для последующей записи в последний индекс среднего элемента (который без пары))
     {
         lengthPairArr = lengthPairArr + 1;
     }
 
     int[] resultArr = new int[lengthPairArr];
+    // если исходный массив - из нечетного коичества, 
+    // в последний индекс "массива пар" записываем число из исходного массива без пары (посередине - в среднем индексе),
     resultArr[lengthPairArr - 1] = arr[lengthPairArr - 1];
-
+    // если исходный массив из четного количества - значение в этом индексе "массива пар" далее перезапишется
+    
     for (int i = 0; i < arr.Length / 2; i++)
     {
-        {
-            resultArr[i] = arr[i] * arr[arr.Length - i - 1];
-        }
+        resultArr[i] = arr[i] * arr[arr.Length - i - 1];
     }
     return resultArr;
 }
