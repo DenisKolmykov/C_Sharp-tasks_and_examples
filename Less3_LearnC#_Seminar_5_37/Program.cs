@@ -5,7 +5,7 @@
 // [6 7 3 6] -> 12 10
 
 
-int[] CreateArray(int length = 10, int minElem = -10, int maxElem = 10)
+int[] CreateArray(int length = 11, int minElem = -10, int maxElem = 10)
 {
     int[] arr = new int[length];
     var rand = new Random();
@@ -20,7 +20,7 @@ int[] CreateArray(int length = 10, int minElem = -10, int maxElem = 10)
 
 int[] GetProdPairInArray(int[] arr)
 {
-    int lengthPairArr = arr.Length / 2;
+    int lengthPairArr = arr.Length / 2; // определяем длину "массива пар" 
 
     if (arr.Length % 2 > 0) // если в массиве нечетное количество элементов
     // то длину массива произведений пар увеличиваем на 1 (если четное количество - то lengthPairArr = arr.Length / 2)
