@@ -30,7 +30,8 @@ int FindTwoDigitNumberInArray(int[] arr)
 
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i] / 100 == 0 && Math.Abs(arr[i] / 10) > 0)
+        // if (arr[i] / 100 == 0 && Math.Abs(arr[i] / 10) > 0) // такая проверка на двузначность тоже работает
+        if (Math.Abs(arr[i]) >= 10 && Math.Abs(arr[i]) <= 99)
         {
             countTwoDigitNumber++;
         }
