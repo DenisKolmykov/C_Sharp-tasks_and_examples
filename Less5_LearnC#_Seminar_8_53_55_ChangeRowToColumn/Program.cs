@@ -30,10 +30,9 @@ void Print2DArray(int[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            Console.Write($"{arr[i, j],5}");
+            Console.Write($"{arr[i, j],4}");
         }
-        Console.WriteLine("\n");
-
+        Console.WriteLine();
     }
 }
 
@@ -44,16 +43,17 @@ int[,] ChangeRowInArray(int[,] array, int row1, int row2)
 
             for (int j = 0; j < columnArray; j++)
             {
-                int temp = array[j, j];
-                array[j, j] = array[row2, j];
+                int temp = array[row1, j];
+                array[row1, j] = array[row2, j];
                 array[row2, j] = temp;
             }
 
     return array;
 }
 
-int[,] ChangeRowToColumn(int[,] array)
+bool ChangeRowToColumn(int[,] array)
 {
+    bool result = true;
     int rowArray = array.GetLength(0);
     int columnArray = array.GetLength(1);
     if (rowArray == columnArray)
@@ -68,7 +68,9 @@ int[,] ChangeRowToColumn(int[,] array)
             }
         }
     }
-    return array;
+    else result = false;
+
+    return result;
 }
 
 int row = 5;
@@ -83,9 +85,9 @@ int row2 = 2;
 Print2DArray(ChangeRowInArray(arrayForChange, row1, row2));
 Console.WriteLine("\n");
 
-if (arrayForChange.GetLength(0) == arrayForChange.GetLength(1))
+if (ChangeRowToColumn(arrayForChange))
 {
-    Print2DArray(ChangeRowToColumn(arrayForChange));
+    Print2DArray(arrayForChange);
 }
 else
 {
