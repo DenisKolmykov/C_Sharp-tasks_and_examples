@@ -41,18 +41,14 @@ int[,] ChangeRowInArray(int[,] array, int row1, int row2)
 {
     int rowArray = array.GetLength(0);
     int columnArray = array.GetLength(1);
-    for (int i = 0; i < rowArray; i++)
-    {
-        if (i == row1)
-        {
+
             for (int j = 0; j < columnArray; j++)
             {
-                int temp = array[i, j];
-                array[i, j] = array[row2, j];
+                int temp = array[j, j];
+                array[j, j] = array[row2, j];
                 array[row2, j] = temp;
             }
-        }
-    }
+
     return array;
 }
 
@@ -75,8 +71,8 @@ int[,] ChangeRowToColumn(int[,] array)
     return array;
 }
 
-int row = 3;
-int column = 3;
+int row = 5;
+int column = 5;
 int[,] arrayForChange = Create2DArrayRnd(row, column);
 Print2DArray(arrayForChange);
 Console.WriteLine("\n");
