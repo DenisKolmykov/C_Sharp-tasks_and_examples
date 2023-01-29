@@ -10,23 +10,53 @@
 26(1,0,1) 55(1,1,1)
 */
 
-
-int[,,] Create3DArrayRnd(int row, int collumns, int z, int minValue = 0, int maxValue = 100)
+int[] CreateArrayOfTwoDigitNumbers()
 {
-    int[,,] array = new int[row, collumns, z];
-    var rnd = new Random();
-
-    for (int i = 0; i < row; i++)
+    int[] arrayOfTwoDigitNumbers = new int[180]; // 180 = count of two-digit numbers from -99 to 99
+    for (int i = 10; i < 100; i++)
     {
-        for (int j = 0; j < collumns; j++)
+        arrayOfTwoDigitNumbers[i - 10] = -i;
+        arrayOfTwoDigitNumbers[i - 10 + 180 / 2] = i;
+    }
+    var rnd = new Random();
+    for (int j = 0; j < 180; j++) // mix elements in this array
+    {
+        int temp = arrayOfTwoDigitNumbers[j];
+        int newIndex = rnd.Next(0, 180);
+        arrayOfTwoDigitNumbers[j] = arrayOfTwoDigitNumbers[newIndex];
+        arrayOfTwoDigitNumbers[newIndex] = temp;
+    }
+    return arrayOfTwoDigitNumbers;
+}
+
+
+bool Create3DArrayRnd(int row, int column, int z)
+{
+    bool result = true;
+    if (row * column * z > 180)
+    {
+        result = false;
+    }
+    else
+    {
+        int[,,] array = new int[row, column, z];
+        int[] newElementArray = CreateArrayOfTwoDigitNumbers();
+        int m = 0; // index of ArrayOfTwoDigitNumbers
+
+        for (int i = 0; i < row; i++)
         {
-            for (int k = 0; k < z; k++)
+            for (int j = 0; j < column; j++)
             {
-                array[i, j, k] = rnd.Next(minValue, maxValue + 1);
+                for (int k = 0; k < z; k++)
+                {
+                    array[i, j, k] = newElementArray[m];
+                    m++;
+                }
             }
         }
+        Print3DArray(array);
     }
-    return array;
+    return result;
 }
 
 void Print3DArray(int[,,] arr)
@@ -52,5 +82,9 @@ int row = 3;
 int column = 3;
 int z = 3;
 
-int[,,] array = Create3DArrayRnd(row, column, z);
-Print3DArray(array);
+bool result = Create3DArrayRnd(row, column, z);
+if (result == false)
+{
+    Console.WriteLine("!!! The size of 3D array more then possible diferent two-digit numbers (180)\n");
+}
+
