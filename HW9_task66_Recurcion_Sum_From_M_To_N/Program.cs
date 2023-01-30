@@ -13,12 +13,19 @@ int GetSumFromMToN(int m, int n)
     {
         return m;
     }
-    int sum = n + GetSumFromMToN(m, n-1);
+    int sum = n + GetSumFromMToN(m, n - 1);
     return sum;
 }
 
 
 int m = 1;
 int n = 15;
+
+if (m > n)
+{
+    int temp = m;
+    m = n;
+    n = temp;
+}
 
 Console.WriteLine(GetSumFromMToN(m, n));
