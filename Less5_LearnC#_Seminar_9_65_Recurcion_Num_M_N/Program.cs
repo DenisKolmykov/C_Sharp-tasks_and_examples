@@ -3,22 +3,29 @@
 программа выводит числа от M до N
 */
 
-
 void GetSetFrom1ToN(int start, int end)
 {
-    if (start >= n)
+
+    if (start == end)
     {
-        Console.Write(n);
+        Console.Write(end);
         Console.WriteLine("\n");
         return;
     }
-    else
-    {
-        Console.Write($"{start}, ");
-        GetSetFrom1ToN(n, start + 1);
-    }
+    Console.Write($"{start}, ");
+    GetSetFrom1ToN(start + 1, end);
 }
 
-int m = start = 5;
-int n = EndOfStreamException=
-GetSetFrom1ToN(n);
+
+int m = 5;
+int n = 8;
+
+int max = m;
+int min = n;
+
+if (m < n)
+{
+    max = n;
+    min = m;
+}
+GetSetFrom1ToN(min, max);
